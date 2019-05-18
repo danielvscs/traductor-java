@@ -5,7 +5,7 @@ import java.util.Hashtable;
 
 public class Traducciones {
 
-	private Hashtable<String, String> words;
+	Hashtable<String, String> words;
 
 	public Traducciones() {
 		setWordsHouse();
@@ -64,6 +64,46 @@ public class Traducciones {
 		}
 
 		return s;
+	}
+
+	public String getValueWithKey(String key) {
+
+		Enumeration e = words.keys();
+		Object clave;
+		Object valor;
+		while (e.hasMoreElements()) {
+			clave = e.nextElement();
+			valor = words.get(clave);
+
+			//System.out.println(valor + " : " + clave);
+			if (clave.toString().equalsIgnoreCase(key)) {
+
+				return valor.toString();
+			}
+
+		}
+
+		return "Not available";
+	}
+
+	public String getKeyWithValue(String value) {
+
+		Enumeration e = words.keys();
+		Object clave;
+		Object valor;
+		while (e.hasMoreElements()) {
+			clave = e.nextElement();
+			valor = words.get(clave);
+
+			//System.out.println(valor + " : " + clave);
+			if (valor.toString().equalsIgnoreCase(value)) {
+
+				return clave.toString();
+			}
+
+		}
+
+		return "No disponible";
 	}
 
 }

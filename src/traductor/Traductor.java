@@ -52,13 +52,19 @@ public class Traductor {
 
 	private static void translate() {
 
-		String traduccion = ventana.input.getText();;
+		String traduccion = ventana.input.getText(), s;
 
 		if (ventana.inputHeader.getText().equals("Spanish")) {
-			ventana.output.setText("Translated: " + traduccion);
+
+			s = traducciones.getValueWithKey(traduccion);
+
 		} else {
-			ventana.output.setText("Traducida: " + traduccion);
+
+			s = traducciones.getKeyWithValue(traduccion);
+
 		}
+
+		ventana.output.setText(s);
 	}
 
 }
