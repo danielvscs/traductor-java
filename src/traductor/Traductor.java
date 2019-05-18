@@ -16,10 +16,6 @@ public class Traductor {
 
 		traducciones = new Traducciones();
 
-		//String options = traducciones.getOptionsWords();
-
-		//ventana.showOptions(options);
-
 		ventana.buttonTranslate.addActionListener(new ActionListener() {
 
 			@Override
@@ -34,6 +30,7 @@ public class Traductor {
 
 	}
 
+	//Muestra las palabras disponibles para la option "house"
 	public static void showOptionsWordHouse(String option) {
 
 		String s = "";
@@ -50,6 +47,7 @@ public class Traductor {
 		ventana.infoOption.setText(s);
 	}
 
+	//Es el encargado de traducir 
 	private static void translate() {
 
 		String traduccion = ventana.input.getText(), s;

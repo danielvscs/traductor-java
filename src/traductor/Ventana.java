@@ -87,6 +87,7 @@ public class Ventana extends JFrame {
 
 	//start panels and fields
 
+	//Pane donde se muestra las cabeceras del input y output
 	private void startPanelenguages() {
 
 		languages = new JPanel();
@@ -100,6 +101,7 @@ public class Ventana extends JFrame {
 		showOutputHeader();
 	}
 
+	//Muestra el idioma del input
 	private void showInputHeader() {
 		inputHeader = new JLabel();
 		inputHeader.setText("Spanish");
@@ -110,6 +112,7 @@ public class Ventana extends JFrame {
 
 	}
 
+	//Muestra el idioma del output
 	private void showOutputHeader() {
 		outputHeader = new JLabel();
 		outputHeader.setText("English");
@@ -120,6 +123,7 @@ public class Ventana extends JFrame {
 
 	}
 
+	//titulo del programa (franja azul)
 	private void startHeaderPanel() {
 		header = new JPanel();
 		header.setBackground(Color.decode("#5C99B2"));
@@ -127,6 +131,7 @@ public class Ventana extends JFrame {
 		add(header);
 	}
 
+	//Panel donde estan los input y output
 	private void startInputsPanel() {
 		inputs = new JPanel();
 		inputs.setBackground(Color.white);
@@ -186,6 +191,7 @@ public class Ventana extends JFrame {
 
 	//show additional fields
 
+	//muestra las palabras disponibles e instrucciones
 	private void showInfoOption(String option) {
 		infoOption = new JTextArea();
 		infoOption.setBackground(Color.decode("#F4F7F7"));
@@ -198,6 +204,7 @@ public class Ventana extends JFrame {
 
 	//buttons
 
+	//botones de las diferentes opciones
 	private void showButtonOptions() {
 		optionNumbers = new JButton();
 		optionHouse = new JButton();
@@ -249,6 +256,7 @@ public class Ventana extends JFrame {
 		inputs.add(listen);
 	}
 
+	//intercambia los idiomas
 	private void buttonChange() {
 
 		change = new JButton();
