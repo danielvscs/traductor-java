@@ -13,12 +13,18 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
 public class Ventana extends JFrame {
 
 	//public static void main()
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4896609577006027592L;
 
 	final int WIDTH, HEIGHT;
 
@@ -38,10 +44,8 @@ public class Ventana extends JFrame {
 	JTextField output;
 	JTextField optionsField;
 
-	JTextPane infoOption;
+	JTextArea infoOption;
 	JTextPane infoTextTranslated;
-
-	String options;
 
 	JLabel title;
 	JLabel inputHeader;
@@ -183,18 +187,11 @@ public class Ventana extends JFrame {
 	//show additional fields
 
 	private void showInfoOption(String option) {
-		infoOption = new JTextPane();
+		infoOption = new JTextArea();
 		infoOption.setBackground(Color.decode("#F4F7F7"));
 		infoOption.setEditable(false);
-
-		if (option.equals("numbers")) {
-			infoOption.setText(
-					"Los numeros del 1 al 20 de manera escrita, y del 1 al 1000 si se pone el numero como número");
-		} else {
-			infoOption.setText("Los objetos de la casa");
-		}
-
-		infoOption.setBounds(30, 160, 200, 200);
+		infoOption.setBounds(30, 160, 200, 230);
+		infoOption.setAutoscrolls(true);
 
 		add(infoOption);
 	}
@@ -214,7 +211,8 @@ public class Ventana extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				optionNumberActionPerformed();
+				option = "numbers";
+				Traductor.showOptionsWordHouse(option);
 			}
 
 		});
@@ -230,7 +228,8 @@ public class Ventana extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				optionHouseActionPerformed();
+				option = "house";
+				Traductor.showOptionsWordHouse(option);
 			}
 
 		});
@@ -301,16 +300,17 @@ public class Ventana extends JFrame {
 
 	}
 
-	private void optionNumberActionPerformed() {
-		option = "numbers";
-		showInfoOption(option);
-	}
-
-	private void optionHouseActionPerformed() {
-		option = "house";
-		showInfoOption(option);
-	}
-
+	/*
+	 * private void optionNumberActionPerformed() {
+	 * option = "numbers";
+	 * showInfoOption(option);
+	 * }
+	 * /*
+	 * private void optionHouseActionPerformed() {
+	 * option = "house";
+	 * showInfoOption(option);
+	 * }
+	 */
 	//Getters and setter
 
 	public String getInput() {

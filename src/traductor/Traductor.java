@@ -7,12 +7,14 @@ public class Traductor {
 
 	private static Ventana ventana;
 
+	static Traducciones traducciones;
+
 	public static void main(String[] args) {
 		ventana = new Ventana("Translate", 650, 450);
 		ventana.run();
 		ventana.setVisible(true);
 
-		//Traducciones traducciones = new Traducciones();
+		traducciones = new Traducciones();
 
 		//String options = traducciones.getOptionsWords();
 
@@ -28,6 +30,24 @@ public class Traductor {
 
 		});
 
+		showOptionsWordHouse(ventana.option);
+
+	}
+
+	public static void showOptionsWordHouse(String option) {
+
+		String s = "";
+
+		if (option.equals("numbers")) {
+			s = "Los numeros del 1 al 20 de manera escrita\n";
+
+		} else {
+			s = "Los objetos de la casa\n";
+
+			s += traducciones.getOptionsWords();
+		}
+
+		ventana.infoOption.setText(s);
 	}
 
 	private static void translate() {

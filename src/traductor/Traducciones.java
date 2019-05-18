@@ -5,35 +5,35 @@ import java.util.Hashtable;
 
 public class Traducciones {
 
-	private Hashtable<String, String> options;
+	private Hashtable<String, String> words;
 
 	public Traducciones() {
-		setOptionsWords();
+		setWordsHouse();
 	}
 
-	private void setOptionsWords() {
+	private void setWordsHouse() {
 
-		options = new Hashtable<String, String>();
+		words = new Hashtable<String, String>();
 
-		options.put("casa", "house");
-		options.put("perro", "dog");
-		options.put("madre", "mom");
-		options.put("Mesa", "table");
-		options.put("pajaro", "bird");
-		options.put("luna", "moon");
-		options.put("sol", "sun");
-		options.put("manzana", "apple");
-		options.put("door", "puerta");
-		options.put("calle", "street");
-		options.put("huevo", "egg");
-		options.put("niña", "girl");
-		options.put("niño", "boy");
-		options.put("oro", "gold");
-		options.put("caballo", "horse");
-		options.put("isla", "Island");
-		options.put("máquina", "machine");
-		options.put("número", "number");
-		options.put("mar", "sea");
+		words.put("casa", "house");
+		words.put("perro", "dog");
+		words.put("madre", "mom");
+		words.put("Mesa", "table");
+		words.put("pajaro", "bird");
+		words.put("luna", "moon");
+		words.put("sol", "sun");
+		words.put("manzana", "apple");
+		words.put("door", "puerta");
+		words.put("calle", "street");
+		words.put("huevo", "egg");
+		words.put("niña", "girl");
+		words.put("niño", "boy");
+		words.put("oro", "gold");
+		words.put("caballo", "horse");
+		words.put("isla", "Island");
+		words.put("máquina", "machine");
+		words.put("número", "number");
+		words.put("mar", "sea");
 
 	}
 
@@ -41,7 +41,7 @@ public class Traducciones {
 
 		String s = "";
 
-		Enumeration e = options.keys();
+		Enumeration<String> e = words.keys();
 		Object clave;
 
 		int i = 1;
@@ -49,7 +49,16 @@ public class Traducciones {
 		while (e.hasMoreElements()) {
 			clave = e.nextElement();
 
-			s += i + ") " + clave + "\n";
+			if (i % 2 != 0) {
+				s += "-" + clave;
+
+				for (int j = clave.toString().length(); j < 30 - clave.toString().length(); j++) {
+					s += " ";
+				}
+
+			} else {
+				s += "-" + clave + "\n";
+			}
 
 			i++;
 		}
