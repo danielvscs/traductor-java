@@ -15,25 +15,26 @@ public class Traducciones {
 
 		words = new Hashtable<String, String>();
 
-		words.put("casa", "house");
-		words.put("perro", "dog");
-		words.put("madre", "mom");
-		words.put("Mesa", "table");
-		words.put("pajaro", "bird");
-		words.put("luna", "moon");
-		words.put("sol", "sun");
-		words.put("manzana", "apple");
-		words.put("door", "puerta");
-		words.put("calle", "street");
-		words.put("huevo", "egg");
-		words.put("niña", "girl");
-		words.put("niño", "boy");
-		words.put("oro", "gold");
-		words.put("caballo", "horse");
-		words.put("isla", "Island");
-		words.put("máquina", "machine");
-		words.put("número", "number");
-		words.put("mar", "sea");
+		words.put("uno", "one");
+		words.put("dos", "two");
+		words.put("tres", "three");
+		words.put("cuatro", "four");
+		words.put("cinco", "five");
+		words.put("seis", "six");
+		words.put("siete", "seven");
+		words.put("ocho", "eight");
+		words.put("nueve", "nine");
+		words.put("diez", "ten");
+		words.put("once", "eleven");
+		words.put("doce", "twelve");
+		words.put("trece", "thirteen");
+		words.put("catorce", "fourteen");
+		words.put("quince", "fifteen");
+		words.put("dieciseis", "sixteen");
+		words.put("diecisiete", "seventeen");
+		words.put("dieciocho", "eighteen");
+		words.put("diecinueve", "nineteen");
+                words.put("veinte","twenty");
 
 	}
 

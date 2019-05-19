@@ -303,22 +303,12 @@ public class Ventana extends JFrame {
 			outputHeader.setText("English");
 		}
 
-		input.setText("");
-		output.setText("");
+		String o = input.getText();
+		input.setText(output.getText());
+		output.setText(o);
 
 	}
 
-	/*
-	 * private void optionNumberActionPerformed() {
-	 * option = "numbers";
-	 * showInfoOption(option);
-	 * }
-	 * /*
-	 * private void optionHouseActionPerformed() {
-	 * option = "house";
-	 * showInfoOption(option);
-	 * }
-	 */
 	//Getters and setter
 
 	public String getInput() {
