@@ -44,26 +44,26 @@ public class Traducciones {
 
 		house = new Hashtable<String, String>();
 
-		house.put("unoaf", "oneafs");
-		house.put("dosasf", "twofsa");
-		house.put("tressfa", "threefas");
-		house.put("cuatrofsa", "foursaf");
-		house.put("cincofsa", "fivefas");
-		house.put("seissfa", "six");
-		house.put("siete", "seven");
-		house.put("ocho", "eight");
-		house.put("nueve", "nine");
-		house.put("diez", "ten");
-		house.put("once", "eleven");
-		house.put("doce", "twelve");
-		house.put("trece", "thirteen");
-		house.put("catorce", "fourteen");
-		house.put("quince", "fifteen");
-		house.put("dieciseis", "sixteen");
-		house.put("diecisiete", "seventeen");
-		house.put("dieciocho", "eighteen");
-		house.put("diecinueve", "nineteen");
-		house.put("veinte", "twenty");
+		house.put("silla", "chair");
+		house.put("mesa", "table");
+		house.put("cama", "bed");
+		house.put("cocina", "kitchen");
+		house.put("armario", "wardrobe");
+		house.put("microondas", "microwave");
+		house.put("cortinas", "curtains");
+		house.put("estufa", "stove");
+		house.put("refrigerador", "refrigerator");
+		house.put("sofá", "sofa");
+		house.put("comedor", "dining room");
+		house.put("baño", "bathroom");
+		house.put("inodoro", "toilet");
+		house.put("bañera", "tub");
+		house.put("ventana", "window");
+		house.put("puerta", "door");
+		house.put("plato", "plate");
+		house.put("vaso", "glass");
+		house.put("televisión", "television");
+		house.put("lámpara", "lamp");
 
 	}
 

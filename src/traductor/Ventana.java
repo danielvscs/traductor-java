@@ -298,9 +298,11 @@ public class Ventana extends JFrame {
 		if (inputHeader.getText().equals("Spanish")) {
 			inputHeader.setText("English");
 			outputHeader.setText("Spanish");
+			listen.setEnabled(false);
 		} else {
 			inputHeader.setText("Spanish");
 			outputHeader.setText("English");
+			listen.setEnabled(true);
 		}
 
 		String o = input.getText();

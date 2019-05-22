@@ -36,10 +36,10 @@ public class Traductor {
 		String s = "";
 
 		if (option.equals("numbers")) {
-			s = "Los numeros del 1 al 20 de manera escrita\n";
+			s = "Los numeros del 1 al 20\n\nSe deben escribir";
 
 		} else {
-			s = "Los objetos de la casa\n";
+			s = "Los objetos comunes de la casa\n";
 
 			s += traducciones.getOptionsWords();
 		}
