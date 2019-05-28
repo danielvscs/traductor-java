@@ -8,6 +8,7 @@ public class Traductor {
 	private static Ventana ventana;
 
 	static Traducciones traducciones;
+	static Audios audios;
 
 	public static void main(String[] args) {
 		ventana = new Ventana("Translate", 650, 450);
@@ -26,6 +27,16 @@ public class Traductor {
 
 		});
 
+		ventana.listen.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				Audios.reproducirAudio(ventana.output.getText());
+
+			}
+
+		});
+
 		showOptionsWordHouse(ventana.option);
 
 	}
@@ -36,14 +47,14 @@ public class Traductor {
 		String s = "";
 
 		if (option.equals("numbers")) {
-			s = "Los numeros del 1 al 20\n\nSe deben escribir";
+			s = "Los numeros del 1 al 20\n\nSe deben escribir los numeros";
 
 		} else {
 			s = "Los objetos comunes de la casa\n";
 
 			s += traducciones.getOptionsWords();
-		}
 
+		}
 		ventana.infoOption.setText(s);
 	}
 

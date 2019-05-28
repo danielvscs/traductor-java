@@ -13,6 +13,7 @@ public class Traducciones {
 		setWordsHouse();
 	}
 
+	/** Cambiar todo hasta... */
 	private void setWordsNumbers() {
 
 		numbers = new Hashtable<String, String>();
@@ -164,4 +165,5 @@ public class Traducciones {
 		return "No disponible";
 	}
 
+	//acá :v
 }
