@@ -1,129 +1,64 @@
 package traductor;
 
-import java.util.Enumeration;
-import java.util.Hashtable;
-
 public class Traducciones {
 
-	Hashtable<String, String> numbers;
-	Hashtable<String, String> house;
+	private String[][] palabras = new String[4][20];
 
 	public Traducciones() {
-		setWordsNumbers();
-		setWordsHouse();
+		setPalabras();
+	}
+
+	public void setPalabras() {
+
+		String[] numerosSpanish = {"uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez",
+				"once", "doce", "trece", "catorce", "quince", "dieciseis", "diecisiete", "dieciocho", "diecinueve",
+				"veinte"};
+		String[] numerosIngles = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
+				"eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen",
+				"twenty"};
+
+		String[] casaSpanish = {"silla", "mesa", "cama", "cocina", "armario", "microondas", "cortinas", "estufa",
+				"refrigerador", "sofá", "comedor", "baño", "inodoro", "bañera", "tub", "ventana", "window", "puerta",
+				"plato", "vaso", "televisión", "lámpara"};
+
+		String[] casaIngles = {"chair", "table", "bed", "kitchen", "wardrobe", "microwave", "curtains", "stove",
+				"refrigerator", "sofa", "dining room", "bathroom", "toilet", "door", "plate", "glass", "television",
+				"lamp"};
+
+		palabras[0] = numerosSpanish;
+		palabras[1] = numerosIngles;
+		palabras[2] = casaSpanish;
+		palabras[3] = casaIngles;
+
 	}
 
 	/** Cambiar todo hasta... */
-	private void setWordsNumbers() {
-
-		numbers = new Hashtable<String, String>();
-
-		numbers.put("uno", "one");
-		numbers.put("dos", "two");
-		numbers.put("tres", "three");
-		numbers.put("cuatro", "four");
-		numbers.put("cinco", "five");
-		numbers.put("seis", "six");
-		numbers.put("siete", "seven");
-		numbers.put("ocho", "eight");
-		numbers.put("nueve", "nine");
-		numbers.put("diez", "ten");
-		numbers.put("once", "eleven");
-		numbers.put("doce", "twelve");
-		numbers.put("trece", "thirteen");
-		numbers.put("catorce", "fourteen");
-		numbers.put("quince", "fifteen");
-		numbers.put("dieciseis", "sixteen");
-		numbers.put("diecisiete", "seventeen");
-		numbers.put("dieciocho", "eighteen");
-		numbers.put("diecinueve", "nineteen");
-		numbers.put("veinte", "twenty");
-
-	}
-
-	private void setWordsHouse() {
-
-		house = new Hashtable<String, String>();
-
-		house.put("silla", "chair");
-		house.put("mesa", "table");
-		house.put("cama", "bed");
-		house.put("cocina", "kitchen");
-		house.put("armario", "wardrobe");
-		house.put("microondas", "microwave");
-		house.put("cortinas", "curtains");
-		house.put("estufa", "stove");
-		house.put("refrigerador", "refrigerator");
-		house.put("sofá", "sofa");
-		house.put("comedor", "dining room");
-		house.put("baño", "bathroom");
-		house.put("inodoro", "toilet");
-		house.put("bañera", "tub");
-		house.put("ventana", "window");
-		house.put("puerta", "door");
-		house.put("plato", "plate");
-		house.put("vaso", "glass");
-		house.put("televisión", "television");
-		house.put("lámpara", "lamp");
-
-	}
-
-	public String getOptionsWords() {
+	public String letras() {
 
 		String s = "";
 
-		Enumeration<String> e = house.keys();
-		Object clave;
-
-		int i = 1;
-
-		while (e.hasMoreElements()) {
-			clave = e.nextElement();
-
-			if (i % 2 != 0) {
-				s += "-" + clave;
-
-				for (int j = clave.toString().length(); j < 30 - clave.toString().length(); j++) {
-					s += " ";
-				}
-
-			} else {
-				s += "-" + clave + "\n";
-			}
-
-			i++;
+		for (int i = 0; i < palabras[0].length; i++) {
+			s += palabras[2][i] + "\n";
 		}
 
 		return s;
+
 	}
 
-	public String getValueWithKey(String key) {
+	public String traducirAlIngles(String palabra) {
 
-		Enumeration<String> e = numbers.keys();
-		Object clave;
-		Object valor;
-		while (e.hasMoreElements()) {
-			clave = e.nextElement();
-			valor = numbers.get(clave);
+		for (int i = 0; i < palabras[0].length; i++) {
 
-			//System.out.println(valor + " : " + clave);
-			if (clave.toString().equalsIgnoreCase(key)) {
-
-				return valor.toString();
+			if (palabra.equalsIgnoreCase(palabras[0][i])) {
+				return palabras[1][i];
 			}
 
 		}
 
-		e = house.keys();
+		for (int i = 0; i < palabras[2].length; i++) {
 
-		while (e.hasMoreElements()) {
-			clave = e.nextElement();
-			valor = house.get(clave);
-
-			//System.out.println(valor + " : " + clave);
-			if (clave.toString().equalsIgnoreCase(key)) {
-
-				return valor.toString();
+			if (palabra.equalsIgnoreCase(palabras[2][i])) {
+				return palabras[3][i];
 			}
 
 		}
@@ -131,37 +66,22 @@ public class Traducciones {
 		return "Not available";
 	}
 
-	public String getKeyWithValue(String value) {
+	public String getKeyWithValue(String palabra) {
+		for (int i = 0; i < palabras[0].length; i++) {
 
-		Enumeration<String> e = numbers.keys();
-		Object clave;
-		Object valor;
-		while (e.hasMoreElements()) {
-			clave = e.nextElement();
-			valor = numbers.get(clave);
-
-			//System.out.println(valor + " : " + clave);
-			if (valor.toString().equalsIgnoreCase(value)) {
-
-				return clave.toString();
+			if (palabra.equalsIgnoreCase(palabras[1][i])) {
+				return palabras[0][i];
 			}
 
 		}
 
-		e = house.keys();
+		for (int i = 0; i < palabras[2].length; i++) {
 
-		while (e.hasMoreElements()) {
-			clave = e.nextElement();
-			valor = house.get(clave);
-
-			//System.out.println(valor + " : " + clave);
-			if (valor.toString().equalsIgnoreCase(value)) {
-
-				return clave.toString();
+			if (palabra.equalsIgnoreCase(palabras[3][i])) {
+				return palabras[1][i];
 			}
 
 		}
-
 		return "No disponible";
 	}
 

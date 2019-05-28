@@ -52,7 +52,7 @@ public class Traductor {
 		} else {
 			s = "Los objetos comunes de la casa\n";
 
-			s += traducciones.getOptionsWords();
+			s += traducciones.letras();
 
 		}
 		ventana.infoOption.setText(s);
@@ -65,7 +65,7 @@ public class Traductor {
 
 		if (ventana.inputHeader.getText().equals("Spanish")) {
 
-			s = traducciones.getValueWithKey(traduccion);
+			s = traducciones.traducirAlIngles(traduccion);
 
 		} else {
 
