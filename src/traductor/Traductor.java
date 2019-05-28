@@ -69,7 +69,7 @@ public class Traductor {
 
 		} else {
 
-			s = traducciones.getKeyWithValue(traduccion);
+			s = traducciones.traducirAlSpanish(traduccion);
 
 		}
 

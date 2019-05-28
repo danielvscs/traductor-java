@@ -38,7 +38,16 @@ public class Traducciones {
 		String s = "";
 
 		for (int i = 0; i < palabras[0].length; i++) {
-			s += palabras[2][i] + "\n";
+			s += palabras[2][i];
+
+			if (i % 2 == 0) {
+				for (int j = 0; j < 30 - palabras[2][i].length(); j++) {
+					s += " ";
+				}
+			} else {
+				s += "\n";
+			}
+
 		}
 
 		return s;
@@ -66,7 +75,7 @@ public class Traducciones {
 		return "Not available";
 	}
 
-	public String getKeyWithValue(String palabra) {
+	public String traducirAlSpanish(String palabra) {
 		for (int i = 0; i < palabras[0].length; i++) {
 
 			if (palabra.equalsIgnoreCase(palabras[1][i])) {
@@ -85,5 +94,4 @@ public class Traducciones {
 		return "No disponible";
 	}
 
-	//acá :v
 }
