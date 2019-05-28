@@ -31,7 +31,7 @@ public class Audios {
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Lo sentimos, ha ocurrido un error :\n\n\n" + e.getMessage(),
+			JOptionPane.showMessageDialog(null, "Lo sentimos, ha ocurrido un error D:\n\n\n" + e.getMessage(),
 					"Error al obtener audio", JOptionPane.ERROR_MESSAGE);
 		}
 
