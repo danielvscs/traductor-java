@@ -18,12 +18,12 @@ public class Traducciones {
 				"twenty"};
 
 		String[] casaSpanish = {"silla", "mesa", "cama", "cocina", "armario", "microondas", "cortinas", "estufa",
-				"refrigerador", "sofá", "comedor", "baño", "inodoro", "bañera", "tub", "ventana", "window", "puerta",
-				"plato", "vaso", "televisión", "lámpara"};
+				"refrigerador", "sofá", "comedor", "baño", "inodoro", "bañera", "ventana", "puerta", "plato", "vaso",
+				"televisión", "lámpara"};
 
 		String[] casaIngles = {"chair", "table", "bed", "kitchen", "wardrobe", "microwave", "curtains", "stove",
-				"refrigerator", "sofa", "dining room", "bathroom", "toilet", "door", "plate", "glass", "television",
-				"lamp"};
+				"refrigerator", "sofa", "dining room", "bathroom", "toilet", "bath", "window", "door", "plate", "glass",
+				"television", "lamp"};
 
 		palabras[0] = numerosSpanish;
 		palabras[1] = numerosIngles;
@@ -76,7 +76,7 @@ public class Traducciones {
 	}
 
 	public String traducirAlSpanish(String palabra) {
-		for (int i = 0; i < palabras[0].length; i++) {
+		for (int i = 0; i < palabras[1].length; i++) {
 
 			if (palabra.equalsIgnoreCase(palabras[1][i])) {
 				return palabras[0][i];
@@ -84,10 +84,10 @@ public class Traducciones {
 
 		}
 
-		for (int i = 0; i < palabras[2].length; i++) {
+		for (int i = 0; i < palabras[3].length; i++) {
 
 			if (palabra.equalsIgnoreCase(palabras[3][i])) {
-				return palabras[1][i];
+				return palabras[2][i];
 			}
 
 		}
